@@ -22,10 +22,10 @@ int main()
         digits.insert(i); 
     }
 
-    for(int num : sequence) {  
-        while(num > 0) {  
-            digits.erase(num % 10);  
-            num /= 10;  
+    for(int num : sequence) {  // цикл для перебора чисел в последовательности
+        if (num >= 10 && num < 100) {  // проверка, является ли число двузначным
+            digits.erase(num / 10);  // удаление первой цифры из числа из множества
+            digits.erase(num % 10);  // удаление второй цифры из числа из множества
         }
     }
 
